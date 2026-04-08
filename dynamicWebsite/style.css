@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(240, 240, 240);
+}
+
+.container {
+    width: 95%;
+    background-color: red;
+    box-sizing: border-box;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image img {
+    width: 200px;
+    height: 100px;
+}
