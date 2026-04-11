@@ -1,16 +1,16 @@
-let title = document.querySelector("title");
-let views = document.querySelector("views");
-let duration = document.querySelector("duration");
-let cName = document.querySelector("cName");
-let timeAgo = document.querySelector("timeAgo");
-function thumbnail(title , views, duration, cName, timeAgo){
-    title.innerText = title;
-    views.innerText = views;
-    duration.innerText = duration;
-    cName.innerText = cName;
-    timeAgo.innerText = timeAgo;
+let title = document.querySelector(".title");
+let views = document.querySelector(".views");
+let duration = document.querySelector(".duration");
+let cName = document.querySelector(".cName");
+let timeAgo = document.querySelector(".timeAgo");
+function thumbnail(t , v, d, channel, time){
+    title.innerText = t;
+    views.innerText = v;
+    duration.innerText = d;
+    cName.innerText = channel;
+    timeAgo.innerText = time;
 }
-setData(
+thumbnail(
     "CSS Exercise 5 - Design Layout",
     "283K views",
     "7:16",
