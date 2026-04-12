@@ -1,19 +1,29 @@
-let title = document.querySelector(".title");
-let views = document.querySelector(".views");
-let duration = document.querySelector(".duration");
-let cName = document.querySelector(".cName");
-let timeAgo = document.querySelector(".timeAgo");
-function thumbnail(t , v, d, channel, time){
-    title.innerText = t;
-    views.innerText = v;
-    duration.innerText = d;
-    cName.innerText = channel;
-    timeAgo.innerText = time;
+function createCard(thumbnail, title, cName, views, duration, timeAgo) {
+    let viewStr
+    if (views < 1000) {
+        viewStr = views
+    }
+    else if (views > 1000000) {
+        viewStr = views / 1000000 + "M"
+    }
+    else {
+        viewStr = views / 1000 + "K"
+    }
+
+    let html = `<div class="card">
+            <div class="image">
+                <img src=${thumbnail} alt="thumbnail">
+
+                <div class="capsule">${duration}</div>
+            </div>
+
+            <div class="text">
+                <h1>${title}</h1>
+                <p>${cName}  •  ${viewStr}  •  ${timeAgo}</p>
+            </div>
+        </div>`
+    document.querySelector(".container").innerHTML = document.querySelector(".container").innerHTML + html
+
 }
-thumbnail(
-    "CSS Exercise 5 - Design Layout",
-    "283K views",
-    "7:16",
-    "Sigma Web Dev",
-    "2 years ago"
-);
+
+createCard("thumbnail.jpg", "Learn Web Development from Zero to Advanced", "AashuCoder", 988000000, "7:00", "7 days ago")
