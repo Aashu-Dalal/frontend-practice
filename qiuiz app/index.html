@@ -50,10 +50,27 @@
     <div class="container">
         <h1>Quiz App</h1>
         <p>Welcome to the Quiz App!</p>
-        <button>Start Quiz</button>
+        <button id="start">Start Quiz</button>
     </div>
-    <div class="temp">
-
+    <div class="temp" style="display: none;" id="quizBox">
+        <h2 id="question">Question</h2>
+        <div>
+            <input type="radio" name="option" id="opt1">
+            <label for="opt1"></label>
+        </div>
+        <div>
+            <input type="radio" name="option" id="opt2">
+            <label for="opt2"></label>
+        </div>
+        <div>
+            <input type="radio" name="option" id="opt3">
+            <label for="opt3"></label>
+        </div>
+        <div>
+            <input type="radio" name="option" id="opt4">
+            <label for="opt4"></label>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
