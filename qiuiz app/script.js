@@ -59,11 +59,41 @@ const quizData =[
 ];
 
 let start = document.getElementById("start");
-let container = document.getElementById("container");
+let container = document.querySelector(".container");
 let quizBox = document.getElementById("quizBox");
 
 let questionEl = document.getElementById("question");
-let option1 = document.getElementById("option1");
-let option2 = document.getElementById("option2");
-let option3 = document.getElementById("option3");
-let option4 = document.getElementById("option4");
+let label1 = document.getElementById("label1");
+let label2 = document.getElementById("label2");
+let label3 = document.getElementById("label3");
+let label4 = document.getElementById("label4");
+
+let nextBtn = document.getElementById("next");
+
+let currentQuestion = 0;
+
+function loadQuiz(){
+    let currentQuizData = quizData[currentQuestion];
+    questionEl.innerText = currentQuizData.question;
+    label1.innerText = currentQuizData.a;
+    label2.innerText = currentQuizData.b;
+    label3.innerText = currentQuizData.c;
+    label4.innerText = currentQuizData.d;
+}
+
+start.addEventListener("click", function(){
+    container.style.display = "none";
+    quizBox.style.display = "block";
+
+    loadQuiz();
+});
+
+nextBtn.addEventListener("click", function(){
+    currentQuestion++;
+    if(currentQuestion < quizData.length){
+        loadQuiz();
+    }
+    else{
+        quizBox.innerHTML = "<h2>You have completed the quiz!</h2>";
+    }
+});
