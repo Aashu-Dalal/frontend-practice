@@ -88,12 +88,27 @@ start.addEventListener("click", function(){
     loadQuiz();
 });
 
-nextBtn.addEventListener("click", function(){
-    currentQuestion++;
-    if(currentQuestion < quizData.length){
-        loadQuiz();
+nextBtn.addEventListener("click" , function(){
+    let selected = getSelected();
+    if(!selected){
+        alert("Please select an answer");
+        return;
+    }
+
+    let correctAns = quizData[currentQuestion].correct;
+    if(selected === correctAns){
+        document.body.style.backgroundColor = "green";
     }
     else{
-        quizBox.innerHTML = "<h2>You have completed the quiz!</h2>";
+        document.body.style.backgroundColor = "red";
     }
-});
+
+    setTimeout(() => {
+        document.body.style.backgroundColor = "white";
+        currentQuestion++;
+
+        if(currentQuestion <quizData.length){
+            loadQuiz()
+        }
+    },800)
+})
