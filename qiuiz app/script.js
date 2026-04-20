@@ -73,6 +73,8 @@ let nextBtn = document.getElementById("next");
 let currentQuestion = 0;
 
 function loadQuiz(){
+    let options = document.querySelectorAll('input[name="option"]');
+    options.forEach(option => option.checked = false);
     let currentQuizData = quizData[currentQuestion];
     questionEl.innerText = currentQuizData.question;
     label1.innerText = currentQuizData.a;
@@ -87,6 +89,17 @@ start.addEventListener("click", function(){
 
     loadQuiz();
 });
+
+function getSelected(){
+    let answer = undefined;
+    let options = document.querySelectorAll('input[name="option"]');
+    options.forEach(option => {
+        if(option.checked){
+            answer = option.id;
+        }
+    })
+    return answer;
+}
 
 nextBtn.addEventListener("click" , function(){
     let selected = getSelected();
