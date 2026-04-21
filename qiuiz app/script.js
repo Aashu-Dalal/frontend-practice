@@ -5,7 +5,7 @@ const quizData =[
         b: "Hyper Text Makeup Language",
         c: "Hyper Text Mark Language",
         d: "Hyper Text Markup Leveler",
-        correct: "a"
+        correct: "opt1"
     },
     {
         question: "What is the full form of CSS?",
@@ -13,7 +13,7 @@ const quizData =[
         b: "Cascading Style Sheep",
         c: "Cartoon Style Sheets",
         d: "Cascading Super Sheets",
-        correct: "a"
+        correct: "opt1"
     },
     {
         question: "What is the full form of JS?",
@@ -21,40 +21,39 @@ const quizData =[
         b: "JavaSuper",
         c: "Just Script",
         d: "Java Syntax",
-        correct: "a"
+        correct: "opt1"
     },
     {
         question: "What is the full form of HTTP?",
-        b: "Hyper Text Test Protocol",
         a: "Hyper Text Transfer Protocol",
+        b: "Hyper Text Test Protocol",
         c: "Hyper Text Template Protocol",
         d: "Hyper Text Transfer Program",
-        correct: "b"
-
+        correct: "opt1"
     },
     {
         question: "What is the full form of API?",
+        a: "Application Programming Interface",
         b: "Application Programming Interference",
         c: "Application Process Interface",
         d: "Application Program Interface",
-        a: "Application Programming Interface",
-        correct: "d"
+        correct: "opt1"
     },
     {
         question: "What is the full form of SQL?",
-        b: "Stylish Question Language",
         a: "Structured Query Language",
+        b: "Stylish Question Language",
         c: "Stylesheet Query Language",
         d: "Statement Question Language",
-        correct: "b"
+        correct: "opt1"
     },
     {
         question: "What is the full form of XML?",
         a: "eXecutable Multiple Language",
-        c: "eXtensible Markup Leveler",
         b: "eXtensible Markup Language",
+        c: "eXtensible Markup Leveler",
         d: "eXecutable Markup Language",
-        correct: "c"
+        correct: "opt2"
     }
 ];
 
