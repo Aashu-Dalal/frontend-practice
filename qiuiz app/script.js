@@ -124,3 +124,12 @@ nextBtn.addEventListener("click" , function(){
         }
     },800)
 })
+
+let score = 0;
+if(selected === correctAns){
+    score++;   
+    document.body.style.backgroundColor = "green";
+}
+else{
+    document.body.style.backgroundColor = "red";
+}
