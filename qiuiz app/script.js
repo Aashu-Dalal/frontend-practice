@@ -107,13 +107,13 @@ nextBtn.addEventListener("click" , function(){
         return;
     }
 
-    let correctAns = quizData[currentQuestion].correct;
-    if(selected === correctAns){
-        document.body.style.backgroundColor = "green";
-    }
-    else{
-        document.body.style.backgroundColor = "red";
-    }
+    // let correctAns = quizData[currentQuestion].correct;
+    // if(selected === correctAns){
+    //     quizBox.style.backgroundColor = "green";
+    // }
+    // else{
+    //     quizBox.style.backgroundColor = "red";
+    // }
 
     setTimeout(() => {
         document.body.style.backgroundColor = "white";
@@ -128,8 +128,8 @@ nextBtn.addEventListener("click" , function(){
 let score = 0;
 if(selected === correctAns){
     score++;   
-    document.body.style.backgroundColor = "green";
+    quizBox.style.backgroundColor = "#d4edda";
 }
 else{
-    document.body.style.backgroundColor = "red";
+    quizBox.style.backgroundColor = "#f8d7da";
 }
