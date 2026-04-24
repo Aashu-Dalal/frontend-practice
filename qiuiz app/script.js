@@ -107,16 +107,19 @@ nextBtn.addEventListener("click" , function(){
         return;
     }
 
-    // let correctAns = quizData[currentQuestion].correct;
-    // if(selected === correctAns){
-    //     quizBox.style.backgroundColor = "green";
-    // }
-    // else{
-    //     quizBox.style.backgroundColor = "red";
-    // }
+    let correctAns = quizData[currentQuestion].correct;
+    if(selected === correctAns){
+        quizBox.style.backgroundColor = "#d4edda";
+        quizBox.style.color = "black";
+    }
+    else{
+        quizBox.style.backgroundColor = "#f8d7da";
+        quizBox.style.color = "black";
+    }
 
     setTimeout(() => {
-        document.body.style.backgroundColor = "white";
+        quizBox.style.backgroundColor = "#1e1e1e";
+        quizBox.style.color = "#ffffff";
         currentQuestion++;
 
         if(currentQuestion <quizData.length){
