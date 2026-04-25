@@ -100,39 +100,43 @@ function getSelected(){
     return answer;
 }
 
-nextBtn.addEventListener("click" , function(){
+let score = 0;
+nextBtn.addEventListener("click", function(){
+
     let selected = getSelected();
+
     if(!selected){
         alert("Please select an answer");
         return;
     }
 
     let correctAns = quizData[currentQuestion].correct;
+
     if(selected === correctAns){
+        score++;
         quizBox.style.backgroundColor = "#d4edda";
         quizBox.style.color = "black";
-    }
-    else{
+    } else {
         quizBox.style.backgroundColor = "#f8d7da";
-        quizBox.style.color = "black";
+                quizBox.style.color = "black";
+
     }
 
     setTimeout(() => {
+
         quizBox.style.backgroundColor = "#1e1e1e";
         quizBox.style.color = "#ffffff";
+
         currentQuestion++;
 
-        if(currentQuestion <quizData.length){
-            loadQuiz()
+        if(currentQuestion < quizData.length){
+            loadQuiz();
+        } else {
+            quizBox.innerHTML = `
+                <h2>Your Score: ${score}/${quizData.length}</h2>
+                <button onclick="location.reload()">Restart Quiz</button>
+            `;
         }
-    },800)
-})
 
-let score = 0;
-if(selected === correctAns){
-    score++;   
-    quizBox.style.backgroundColor = "#d4edda";
-}
-else{
-    quizBox.style.backgroundColor = "#f8d7da";
-}
+    }, 800);
+});
