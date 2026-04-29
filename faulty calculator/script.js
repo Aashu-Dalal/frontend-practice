@@ -13,11 +13,12 @@ buttons.forEach(button => {
         }
         else if (value === "=") {
             try {
-                calculation.value = eval(calculation.value);
+                let result = eval(calculation.value);
 
-                if(Math.random() <0.2){
+                if (Math.random() < 0.2) {
                     result += Math.floor(Math.random() * 10) + 1;
                 }
+                calculation.value = result;
             } catch (e) {
                 calculation.value = "Error";
             }
@@ -30,6 +31,10 @@ buttons.forEach(button => {
                 calculation.value = 'Error';
             }
         } else if (value === '√x') {
+            if (calculation.value < 0) {
+                calculation.value = 'Error';
+                return;
+            }
             try {
                 let num = parseFloat(calculation.value);
                 calculation.value = Math.sqrt(num);
