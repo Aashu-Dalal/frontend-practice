@@ -46,3 +46,28 @@ buttons.forEach(button => {
         }
     })
 })
+document.addEventListener('keydown', (event) => {
+    let key = event.key;
+    if (!isNaN(key)){
+        calculation.value += key;
+    }
+    else if(['+', '-', '*', '/', '.'].includes(key)){
+        calculation.value += key;
+    }
+    else if(key === 'Enter'){
+        try{
+            let result = eval(calculation.value);
+
+            if(Math.random() <0.2){
+                result += Math.floor(Math.random()*10) +1
+            }
+
+            calculation.value = result;
+        }catch(e){
+            calculation.value = "Error"
+        }
+    }
+    else if(key === 'Backspace'){
+        calculation.value = calculation.value.slice(0, -1);
+    }
+})
