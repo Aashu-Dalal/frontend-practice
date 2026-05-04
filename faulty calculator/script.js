@@ -55,6 +55,7 @@ document.addEventListener('keydown', (event) => {
         calculation.value += key;
     }
     else if(key === 'Enter'){
+        event.preventDefault();
         try{
             let result = eval(calculation.value);
 
